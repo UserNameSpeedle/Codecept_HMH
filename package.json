@@ -11,7 +11,8 @@
   "description": "",
   "dependencies": {
     "codeceptjs": "^3.6.10",
-    "playwright": "^1.49.1"
+    "playwright": "^1.49.1",
+    "unirest": "^0.6.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
