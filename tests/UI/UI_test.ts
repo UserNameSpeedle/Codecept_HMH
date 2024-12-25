@@ -11,7 +11,7 @@ Scenario('Create a new todo', ({ I }) => {
     I.seeElementInDOM('$todo-item'); // Verify the todo element exists
     I.seeElement('$footer'); // Verify the footer is visible
     I.seeTodo('First todo'); // Verify the todo text is displayed
-});
+}).tag('@pass');
 
 Scenario('Delete an existing todo item', ({ I }) => {
     I.say('Given I have one todo');
@@ -22,7 +22,7 @@ Scenario('Delete an existing todo item', ({ I }) => {
     
     I.say('Then I should not see it in my list');
     I.dontSee('Premade todo 1');
-});
+}).tag('@pass');
 
 Scenario('Handle character escaping - Bug', ({ I }) => {
     I.say('Given I don\'t have any todos');
@@ -33,7 +33,7 @@ Scenario('Handle character escaping - Bug', ({ I }) => {
     
     I.say('Then I should see the todo with properly escaped characters');
     I.seeTodo('Problem with special characters - "');
-});
+}).tag('@bug');
 
 Scenario('Mark a todo item as complete', ({ I }) => {
     I.say('Given I have one todo');
@@ -44,7 +44,7 @@ Scenario('Mark a todo item as complete', ({ I }) => {
     
     I.say('Then I should see the todo marked as complete');
     I.seeTodoIsComplete('Premade todo 1');
-});
+}).tag('@pass');
 
 Scenario('Mark all todo items as complete', ({ I }) => {
     I.say('Given I have four todos');
@@ -59,7 +59,7 @@ Scenario('Mark all todo items as complete', ({ I }) => {
     I.seeTodoIsComplete('Premade todo 2');
     I.seeTodoIsComplete('Premade todo 3');
     I.seeTodoIsComplete('Premade todo 4');
-});
+}).tag('@pass');
 
 
 Scenario('Mark some todo items as complete and use filters', ({ I }) => {
@@ -77,7 +77,7 @@ Scenario('Mark some todo items as complete and use filters', ({ I }) => {
     I.seeTodo('Premade todo 4');
     I.dontSeeTodo('Premade todo 1');
     I.dontSeeTodo('Premade todo 3');
-});
+}).tag('@pass');
 
 Scenario('Mark some todo items as complete and click "Clear completed"', ({ I }) => {
     I.say('Given I have four todos');
@@ -93,7 +93,7 @@ Scenario('Mark some todo items as complete and click "Clear completed"', ({ I })
     I.seeTodo('Premade todo 4');
     I.verifyTodoDoesNotExist('Premade todo 1');
     I.verifyTodoDoesNotExist('Premade todo 3');
-});
+}).tag('@pass');
 
 Scenario('Update todo', ({ I }) => {
     I.say('Given I have two todos');
@@ -106,4 +106,4 @@ Scenario('Update todo', ({ I }) => {
     I.seeNumberOfTodo(2);
     I.verifyTodoExists('Premade todo 1 Updated');
     I.verifyTodoDoesNotExist('Premade todo 1');
-});
+}).tag('@pass');

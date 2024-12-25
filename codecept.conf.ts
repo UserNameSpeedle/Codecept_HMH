@@ -10,7 +10,7 @@ export const config: CodeceptJS.MainConfig = {
   helpers: {
     Playwright: {
       url: 'https://todomvc.com/examples/react/dist',
-      show: true,
+      show: false,
       browser: 'chromium'
     },
     REST: {

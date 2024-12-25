@@ -23,8 +23,21 @@ npm install
 
 ## Run Tests
 
-Run the following command:
+One browser with detailed steps run the following command:
+
+```bash
+npx codeceptjs run --steps
+```
+
+Two browser in parallel run the following command:
 
 ```bash
 npx codeceptjs run-workers 2 two
+```
+
+tags:
+
+```bash
+--grep '@pass'
+--grep '@bug'
 ```
