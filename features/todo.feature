@@ -7,3 +7,8 @@ Feature: todo Feature
     Given I am on Home Page
     When I create a todo
     Then I see my todo in the list
+
+  Scenario: Create a new todo calling Page Object
+    Given I am on Home Page calling Page Object
+    When I create a todo calling Page Object
+    Then I see my todo in the list calling Page Object

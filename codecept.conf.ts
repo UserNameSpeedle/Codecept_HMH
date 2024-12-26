@@ -12,7 +12,8 @@ exports.config = {
     JSONResponse: {}
   },
   include: {
-    I: './steps_file'
+    I: './steps_file',
+    todoPage: "./pages/todo.ts",
   },
   mocha: {},
   bootstrap: null,
