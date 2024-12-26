@@ -1,5 +1,22 @@
 Feature('UI');
 
+// Scenario('Create a new todo with gherkin', ({ I }) => {
+//     I.say('Given I don\'t have any todos');
+//     I.haveNoTodo();
+    
+//     I.say('When I create a todo');
+//     I.createTodo('First todo');
+    
+//     I.say('Then I should see the todo in my list');
+//     I.seeElementInDOM('$todo-item'); // Verify the todo element exists
+//     I.seeElement('$footer'); // Verify the footer is visible
+//     I.seeTodo('First todo'); // Verify the todo text is displayed
+// }).tag('@gherkin');
+
+
+
+
+
 Scenario('Create a new todo', ({ I }) => {
     I.say('Given I don\'t have any todos');
     I.haveNoTodo();

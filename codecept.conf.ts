@@ -1,11 +1,4 @@
-import { setHeadlessWhen, setCommonPlugins } from '@codeceptjs/configure';
-
-setHeadlessWhen(process.env.HEADLESS);
-
-setCommonPlugins();
-
-export const config: CodeceptJS.MainConfig = {
-  tests: './tests/**/*_test.ts', // Looking for tets in subfolders
+exports.config = {
   output: './output',
   helpers: {
     Playwright: {
@@ -18,19 +11,55 @@ export const config: CodeceptJS.MainConfig = {
     },
     JSONResponse: {}
   },
+  include: {
+    I: './steps_file'
+  },
+  mocha: {},
+  bootstrap: null,
+  timeout: null,
+  teardown: null,
+  hooks: [],
+  gherkin: {
+    features: './features/*.feature',
+    steps: ['./step_definitions/steps.ts']
+  },
+  plugins: {
+    screenshotOnFail: {
+      enabled: true
+    },
+    customLocator: {
+      enabled: true,
+      attribute: 'data-testid'
+    },
+    tryTo: {
+      enabled: true
+    },
+    retryFailedStep: {
+      enabled: true
+    },
+    retryTo: {
+      enabled: true
+    },
+    eachElement: {
+      enabled: true
+    },
+    pauseOnFail: {}
+  },
+  stepTimeout: 0,
+  stepTimeoutOverride: [{
+      pattern: 'wait.*',
+      timeout: 0
+    },
+    {
+      pattern: 'amOnPage',
+      timeout: 0
+    }
+  ],
+  tests: './tests/**/*_test.ts',
   multiple: {
     two: {
       browsers: ['chromium', 'firefox']
     }
-  },
-  plugins: {
-    customLocator: { // Custom locator Used in tested app
-      enabled: true,
-      attribute: 'data-testid' 
-    }
-   },
-  include: {
-    I: './steps_file'
   },
   name: 'Codecept'
 }
