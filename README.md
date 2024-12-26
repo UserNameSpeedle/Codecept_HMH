@@ -55,4 +55,3 @@ To filter tests by tags, use the `--grep` flag followed by the tag name. Example
   ```bash
   npx codeceptjs run --grep '@bug'
   ```
-```

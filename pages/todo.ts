@@ -18,6 +18,4 @@ export = {
     I.see(todo, '$todo-item-label');
   },
 
-
-
-g}
+}
